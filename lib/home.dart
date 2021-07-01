@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 // import 'package:gallery/data/gallery_options.dart';
 // import 'package:flutter_gen/gen_l10n/gallery_localizations.dart';
 import 'package:cupid/layout/adaptive.dart';
-import 'package:cupid/layout/text_scale.dart';
+// import 'package:cupid/layout/text_scale.dart';
 import 'package:cupid/tabs/cupid_list_screen.dart';
 import 'package:cupid/tabs/home_real.dart';
 // import 'package:gallery/studies/rally/tabs/accounts.dart';
@@ -80,7 +80,7 @@ class _HomePageState extends State<HomePage>
       tabBarView = Row(
         children: [
           Container(
-            width: 150 + 50 * (cappedTextScale(context) - 1),
+            // width: 150 + 50 * (cappedTextScale(context) - 1),
             alignment: Alignment.topCenter,
             padding: const EdgeInsets.symmetric(vertical: 32),
             child: Column(

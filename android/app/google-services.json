@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "715358442913",
+    "project_id": "cupitter6",
+    "storage_bucket": "cupitter6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:715358442913:android:cd108d03b33f2b112027e0",
+        "android_client_info": {
+          "package_name": "app.web.cupitter6"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "715358442913-bn48cdc8lq7slt0f36diinj0quv0k2oe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpuJlZPJj4_pAxMejG03FCI_Y9xnWHrIM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "715358442913-bn48cdc8lq7slt0f36diinj0quv0k2oe.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "715358442913-6uiortn1olncqacrmrjsuk4qpugqv8at.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "app.web.cupitter6"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

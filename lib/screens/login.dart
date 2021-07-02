@@ -86,7 +86,7 @@ class _MainView extends StatelessWidget {
     List<Widget> listViewChildren;
 
     if (isDesktop) {
-      final desktopMaxWidth = 400.0 + 100.0 * (cappedTextScale(context) - 1);
+      final desktopMaxWidth = 700.0 + 100.0 * (cappedTextScale(context) - 1);
       listViewChildren = [
         _UsernameInput(
           maxWidth: desktopMaxWidth,

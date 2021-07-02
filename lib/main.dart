@@ -1,13 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'package:cupid/home.dart';
 import 'package:cupid/routes.dart' as routes;
 import 'package:cupid/screens/login.dart';
 import 'package:cupid/screens/profile_setting_screen.dart';
+// import 'package:cupid/screens/splash_screen.dart';
 
+import 'package:firebase_core/firebase_core.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 
-void main() {
-  runApp(CupitterApp());
+void main() async {
+    WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ApplicationState(),
+      builder: (context, _) => CupitterApp(),
+    ),
+  );
 }
 
 class CupitterApp extends StatelessWidget {
@@ -21,23 +32,29 @@ class CupitterApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Cupitter',
-      theme: ThemeData(
-        primarySwatch: Colors.amber,
-      ),
-      home: HomePage(),
-      initialRoute: loginRoute,
-      routes: <String, WidgetBuilder>{
-        homeRoute: (context) => const HomePage(),
-        loginRoute: (context) => const LoginPage(),
-        profileSettingsRoute: (context) => ProfileSettingScreen(),
-        // profileSetRoute: (context) => ProfileSetView(),
-        // profileScreenRoute: (context) => ProfileScreen()
-        // chatScreenRoute: (context) => ChatScreen()
-      },
-    );
-  }
+    // final Future<FirebaseApp> _initialization = Firebase.initializeApp();
+    // return FutureBuilder(
+    //   // Initialize FlutterFire:
+    //   future: _initialization,
+    //   builder: (context, appSnapshot) {
+        return MaterialApp(
+          title: 'Cupitter',
+          theme: ThemeData(
+            primarySwatch: Colors.amber,
+          ),
+          home: HomePage(),
+          initialRoute: loginRoute,
+          routes: <String, WidgetBuilder>{
+            homeRoute: (context) => const HomePage(),
+            loginRoute: (context) => const LoginPage(),
+            profileSettingsRoute: (context) => ProfileSettingScreen(),
+            // profileSetRoute: (context) => ProfileSetView(),
+            // profileScreenRoute: (context) => ProfileScreen()
+            // chatScreenRoute: (context) => ChatScreen()
+          },
+        );
+      }
+
 }
 
 // class MyHomePage extends StatefulWidget {
@@ -60,3 +77,14 @@ class CupitterApp extends StatelessWidget {
 //     );
 //   }
 // }
+
+
+// appSnapshot.connectionState != ConnectionState.done ? SplashScreen() : StreamBuilder(stream: FirebaseAuth.instance.authStateChanges(), builder: (ctx, userSnapshot) {
+//           if (userSnapshot.connectionState == ConnectionState.waiting) {
+//             return SplashScreen();
+//           }
+//           if (userSnapshot.hasData) {
+//             return HomePage();
+//           }
+//           return LoginPage();
+//         }),

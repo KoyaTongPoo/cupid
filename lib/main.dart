@@ -5,10 +5,31 @@ import 'package:cupid/home.dart';
 import 'package:cupid/routes.dart' as routes;
 import 'package:cupid/screens/login.dart';
 import 'package:cupid/screens/profile_setting_screen.dart';
+import 'package:cupid/screens/chat_screen.dart';
+// import 'package:cupid/screens/profile_set.dart';
 // import 'package:cupid/screens/splash_screen.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
+
+// class CupitterAppProvider extends StatefulWidget {
+//   @override
+//   _CupitterAppProviderState createState() => _CupitterAppProviderState();
+// }
+
+// class _CupitterAppProviderState extends State<CupitterAppProvider> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MultiProvider(providers: [
+//       ChangeNotifierProvider(
+//         create: (context) => ApplicationState(),
+//       builder: (context, _) => CupitterApp(),
+//       )
+//     ],
+//     // child: CupitterApp(),
+//     );
+//   }
+// }
 
 void main() async {
     WidgetsFlutterBinding.ensureInitialized();
@@ -42,6 +63,7 @@ class CupitterApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.amber,
           ),
+          debugShowCheckedModeBanner: false,
           home: HomePage(),
           initialRoute: loginRoute,
           routes: <String, WidgetBuilder>{
@@ -50,7 +72,7 @@ class CupitterApp extends StatelessWidget {
             profileSettingsRoute: (context) => ProfileSettingScreen(),
             // profileSetRoute: (context) => ProfileSetView(),
             // profileScreenRoute: (context) => ProfileScreen()
-            // chatScreenRoute: (context) => ChatScreen()
+            chatScreenRoute: (context) => ChatScreen()
           },
         );
       }

@@ -13,7 +13,7 @@ import 'package:provider/provider.dart';
 // import 'package:gallery/studies/rally/tabs/forum.dart';
 
 import 'package:cupid/widgets/authentication.dart';
-// import 'package:cupid/screens/login.dart';
+import 'package:cupid/screens/login.dart';
 
 void SelectProfileSetting(BuildContext ctx) {
   Navigator.of(ctx).pushNamed(rally_route.profileSettingsRoute);
@@ -58,19 +58,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
               //       ),
               //     ),
               //   ),
-              // Consumer<ApplicationState>(
-              //   builder: (context, appState, _) => Authentication(
-              //     email: appState.email,
-              //     loginState: appState.loginState,
-              //     startLoginFlow: appState.startLoginFlow,
-              //     verifyEmail: appState.verifyEmail,
-              //     signInWithEmailAndPassword:
-              //         appState.signInWithEmailAndPassword,
-              //     cancelRegistration: appState.cancelRegistration,
-              //     registerAccount: appState.registerAccount,
-              //     signOut: appState.signOut,
-              //   ),
-              // ),
+              Consumer<ApplicationState>(
+                builder: (context, appState, _) => Authentication(
+                  email: appState.email,
+                  loginState: appState.loginState,
+                  startLoginFlow: appState.startLoginFlow,
+                  verifyEmail: appState.verifyEmail,
+                  signInWithEmailAndPassword:
+                      appState.signInWithEmailAndPassword,
+                  cancelRegistration: appState.cancelRegistration,
+                  registerAccount: appState.registerAccount,
+                  signOut: appState.signOut,
+                ),
+              ),
               Card(
                 color: RallyColors.cardBackground,
                 child: Container(

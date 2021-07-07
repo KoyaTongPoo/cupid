@@ -344,8 +344,8 @@ class _ThumbButtonState extends State<_ThumbButton> {
           },
           child: Container(
             decoration: borderDecoration,
-            height: 120,
-            width: 120,
+            height: 30,
+            width: 30,
             color: Colors.blue,
             // child: ExcludeSemantics(
             //   child: Image.asset(

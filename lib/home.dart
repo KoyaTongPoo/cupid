@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:cupid/layout/adaptive.dart';
 // import 'package:cupid/layout/text_scale.dart';
 import 'package:cupid/tabs/cupid_list_screen.dart';
-import 'package:cupid/tabs/home_real.dart';
+import 'package:cupid/tabs/home_screen.dart';
 // import 'package:gallery/studies/rally/tabs/accounts.dart';
 import 'package:cupid/tabs/forum.dart';
 // import 'package:gallery/studies/rally/tabs/bills.dart';

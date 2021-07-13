@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>715358442913-6uiortn1olncqacrmrjsuk4qpugqv8at.apps.googleusercontent.com</string>
+	<string>1007845862518-nlsp6ta4j44bn55t4t578esj61hh04pf.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.715358442913-6uiortn1olncqacrmrjsuk4qpugqv8at</string>
+	<string>com.googleusercontent.apps.1007845862518-nlsp6ta4j44bn55t4t578esj61hh04pf</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAZRV-i9oQsvsDAuvzPgsp2aUKBzEYImFs</string>
+	<string>AIzaSyA6gXAXlXg6g4IsAHUiAId6EQ5_hPkHcJQ</string>
 	<key>GCM_SENDER_ID</key>
-	<string>715358442913</string>
+	<string>1007845862518</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>app.web.cupitter6</string>
 	<key>PROJECT_ID</key>
-	<string>cupitter6</string>
+	<string>cupitter-a</string>
 	<key>STORAGE_BUCKET</key>
-	<string>cupitter6.appspot.com</string>
+	<string>cupitter-a.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:715358442913:ios:f7ccd1c6ee9b51302027e0</string>
+	<string>1:1007845862518:ios:8918f900b0a4f5adc0c357</string>
 </dict>
 </plist>

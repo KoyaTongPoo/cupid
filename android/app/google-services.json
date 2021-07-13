@@ -1,40 +1,40 @@
 {
   "project_info": {
-    "project_number": "715358442913",
-    "project_id": "cupitter6",
-    "storage_bucket": "cupitter6.appspot.com"
+    "project_number": "1007845862518",
+    "project_id": "cupitter-a",
+    "storage_bucket": "cupitter-a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:715358442913:android:cd108d03b33f2b112027e0",
+        "mobilesdk_app_id": "1:1007845862518:android:c700f38bd6aabe69c0c357",
         "android_client_info": {
           "package_name": "app.web.cupitter6"
         }
       },
       "oauth_client": [
         {
-          "client_id": "715358442913-bn48cdc8lq7slt0f36diinj0quv0k2oe.apps.googleusercontent.com",
+          "client_id": "1007845862518-4ptg3d5q6nsg5os4qud1iupd7gsv3e34.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBpuJlZPJj4_pAxMejG03FCI_Y9xnWHrIM"
+          "current_key": "AIzaSyA-nKw3uWLXGO4muQWSAuPS7Ai60wBFtUc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "715358442913-bn48cdc8lq7slt0f36diinj0quv0k2oe.apps.googleusercontent.com",
+              "client_id": "1007845862518-4ptg3d5q6nsg5os4qud1iupd7gsv3e34.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "715358442913-6uiortn1olncqacrmrjsuk4qpugqv8at.apps.googleusercontent.com",
+              "client_id": "1007845862518-534er03un7vr7uvffu5a0huborvujvqd.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "app.web.cupitter6"
+                "bundle_id": "com.example.cupid"
               }
             }
           ]

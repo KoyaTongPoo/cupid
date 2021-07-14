@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'package:cupid/home.dart';
 import 'package:cupid/routes.dart' as routes;
@@ -8,6 +9,7 @@ import 'package:cupid/screens/profile_setting_screen.dart';
 import 'package:cupid/screens/chat_screen.dart';
 // import 'package:cupid/screens/profile_set.dart';
 // import 'package:cupid/screens/splash_screen.dart';
+import 'package:cupid/data/colors.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
@@ -60,9 +62,7 @@ class CupitterApp extends StatelessWidget {
     //   builder: (context, appSnapshot) {
         return MaterialApp(
           title: 'Cupitter',
-          theme: ThemeData(
-            primarySwatch: Colors.amber,
-          ),
+          theme: _buildRallyTheme(),
           debugShowCheckedModeBanner: false,
           home: HomePage(),
           initialRoute: loginRoute,
@@ -78,6 +78,57 @@ class CupitterApp extends StatelessWidget {
       }
 
 }
+
+
+  ThemeData _buildRallyTheme() {
+    final base = ThemeData.dark();
+    return ThemeData(
+      appBarTheme: const AppBarTheme(brightness: Brightness.dark, elevation: 0),
+      scaffoldBackgroundColor: RallyColors.primaryBackground,
+      primaryColor: RallyColors.primaryBackground,
+      focusColor: RallyColors.focusColor,
+      textTheme: _buildRallyTextTheme(base.textTheme),
+      inputDecorationTheme: const InputDecorationTheme(
+        labelStyle: TextStyle(
+          color: RallyColors.gray,
+          fontWeight: FontWeight.w500,
+        ),
+        filled: true,
+        fillColor: RallyColors.inputBackground,
+        focusedBorder: InputBorder.none,
+      ),
+      visualDensity: VisualDensity.standard,
+    );
+  }
+
+  TextTheme _buildRallyTextTheme(TextTheme base) {
+    return base
+        .copyWith(
+          bodyText2: GoogleFonts.mPlus1p(
+            fontSize: 14,
+            fontWeight: FontWeight.w500,
+            // letterSpacing: letterSpacingOrNone(0.5),
+          ),
+          bodyText1: GoogleFonts.mPlus1p(
+            fontSize: 40,
+            fontWeight: FontWeight.w400,
+            // letterSpacing: letterSpacingOrNone(1.4),
+          ),
+          button: GoogleFonts.mPlus1p(
+            fontWeight: FontWeight.w500,
+            // letterSpacing: letterSpacingOrNone(2.8),
+          ),
+          headline5: GoogleFonts.mPlus1p(
+            fontSize: 40,
+            fontWeight: FontWeight.w700,
+            // letterSpacing: letterSpacingOrNone(1.4),
+          ),
+        )
+        .apply(
+          displayColor: Colors.white,
+          bodyColor: Colors.white,
+        );
+  }
 
 // class MyHomePage extends StatefulWidget {
 //   MyHomePage({Key? key}) : super(key: key);

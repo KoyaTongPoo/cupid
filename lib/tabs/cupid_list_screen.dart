@@ -13,7 +13,11 @@ class _CupidListScreenState extends State<CupidListScreen> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-      stream: FirebaseFirestore.instance.collection('users').snapshots(),
+      stream: FirebaseFirestore.instance
+          .collection('users')
+          .where('username',
+              isNotEqualTo: FirebaseAuth.instance.currentUser!.displayName)
+          .snapshots(),
       builder:
           (ctx, AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
@@ -23,17 +27,17 @@ class _CupidListScreenState extends State<CupidListScreen> {
         }
         final usersDocs = snapshot.data!.docs;
         return ListView.builder(
-          reverse: false,
-          itemCount: usersDocs.length,
-          itemBuilder: (ctx, index) => 
-          // if (usersDocs[index].data()['username'].toString() ==
-          //       FirebaseAuth.instance.currentUser!.displayName) 
-              CupidListTile(
-                usersDocs[index].data()['username'].toString(),
-                usersDocs[index].id,
-              )
+            reverse: false,
+            itemCount: usersDocs.length,
+            itemBuilder: (ctx, index) =>
+                // if (usersDocs[index].data()['username'].toString() ==
+                //       FirebaseAuth.instance.currentUser!.displayName)
+                CupidListTile(
+                  usersDocs[index].data()['username'].toString(),
+                  usersDocs[index].id,
+                )
             // return const Text('Error');
-        );
+            );
       },
     );
   }

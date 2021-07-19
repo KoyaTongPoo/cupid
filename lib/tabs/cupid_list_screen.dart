@@ -30,8 +30,6 @@ class _CupidListScreenState extends State<CupidListScreen> {
             reverse: false,
             itemCount: usersDocs.length,
             itemBuilder: (ctx, index) =>
-                // if (usersDocs[index].data()['username'].toString() ==
-                //       FirebaseAuth.instance.currentUser!.displayName)
                 CupidListTile(
                   usersDocs[index].data()['username'].toString(),
                   usersDocs[index].id,
@@ -46,11 +44,12 @@ class _CupidListScreenState extends State<CupidListScreen> {
 class CupidListTile extends StatelessWidget {
   void _setRequest(String cupidName, String cupidID) async {
     final user = FirebaseAuth.instance.currentUser;
-    await FirebaseFirestore.instance.collection('request').add(<String, dynamic>{
-      'seekerName': user!.displayName,
+    await FirebaseFirestore.instance.collection('request').doc(user!.uid + cupidID).set(<String, dynamic>{
+      'seekerName': user.displayName,
       'seekerID': user.uid,
       'pairCupidName': cupidName,
       'pairCupidID': cupidID,
+      // 'chatID': FirebaseFirestore.instance.collection('request').doc().id
     });
   }
 

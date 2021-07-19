@@ -34,10 +34,8 @@ class _HomeRealState extends State<HomeReal> {
           reverse: false,
           itemCount: usersDocs.length,
           itemBuilder: (ctx, index) => MatchListTile(
-            usersDocs[index].data()['pairCupidName'].toString(),
-            matchKey:
-                ValueKey(usersDocs[index].data()['pairCupidID'].toString()),
-          ),
+              usersDocs[index].data()['pairCupidName'].toString(),
+              usersDocs[index].data()['pairCupidID'].toString()),
         );
       },
     );
@@ -62,17 +60,19 @@ class _HomeRealState extends State<HomeReal> {
 }
 
 class MatchListTile extends StatelessWidget {
-  MatchListTile(this.name, {required this.matchKey});
+  MatchListTile(
+    this.name,
+    this.cupidId,
+  );
 
-  final Key matchKey;
-  // final String id;
+  final String cupidId;
   final String name;
 
   void _selectMatchTile(BuildContext ctx) {
     Navigator.of(ctx).pushNamed<void>(
       rally_route.chatScreenRoute,
       arguments: {
-        'matchKey': matchKey,
+        'cupidId': cupidId,
         'name': name,
       },
     );

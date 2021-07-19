@@ -13,6 +13,7 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
+
   @override
   // void initState() {
   //   super.initState();
@@ -32,9 +33,8 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     final routeArgs = ModalRoute.of(context)!.settings.arguments as Map;
-    // final cupidId = routeArgs['id'];
+    final cupidID = routeArgs['cupidId'].toString();
     final matchName = routeArgs['name'].toString();
-    // final Key matchKey;
     
     return Scaffold(
       appBar: AppBar(
@@ -44,9 +44,9 @@ class _ChatScreenState extends State<ChatScreen> {
         child: Column(
           children: <Widget>[
             Expanded(
-              child: Messages(),
+              child: Messages(cupidID),
             ),
-            NewMessage(),
+            NewMessage(cupidID),
           ],
         ),
       ),

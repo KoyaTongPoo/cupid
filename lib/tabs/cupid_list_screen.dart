@@ -44,9 +44,9 @@ class _CupidListScreenState extends State<CupidListScreen> {
 }
 
 class CupidListTile extends StatelessWidget {
-  void _setIrai(String cupidName, String cupidID) async {
+  void _setRequest(String cupidName, String cupidID) async {
     final user = FirebaseAuth.instance.currentUser;
-    await FirebaseFirestore.instance.collection('irai').add(<String, dynamic>{
+    await FirebaseFirestore.instance.collection('request').add(<String, dynamic>{
       'seekerName': user!.displayName,
       'seekerID': user.uid,
       'pairCupidName': cupidName,
@@ -72,7 +72,7 @@ class CupidListTile extends StatelessWidget {
       title: Text(cupidName),
       trailing: ElevatedButton(
         onPressed: () {
-          _setIrai(cupidName, id);
+          _setRequest(cupidName, id);
         },
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all<Color>(Colors.blueGrey),

@@ -18,7 +18,7 @@ class _HomeRealState extends State<HomeReal> {
   Widget build(BuildContext context) {
     return StreamBuilder(
       stream: FirebaseFirestore.instance
-          .collection('irai')
+          .collection('request')
           .where('seekerName',
               isEqualTo: FirebaseAuth.instance.currentUser!.displayName)
           .snapshots(),

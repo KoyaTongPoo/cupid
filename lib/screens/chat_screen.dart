@@ -34,7 +34,7 @@ class _ChatScreenState extends State<ChatScreen> {
     final routeArgs = ModalRoute.of(context)!.settings.arguments as Map;
     // final cupidId = routeArgs['id'];
     final matchName = routeArgs['name'].toString();
-    final Key matchKey;
+    // final Key matchKey;
     
     return Scaffold(
       appBar: AppBar(

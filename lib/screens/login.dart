@@ -342,17 +342,20 @@ class _ThumbButtonState extends State<_ThumbButton> {
               });
             }
           },
-          child: Container(
-            decoration: borderDecoration,
-            height: 30,
-            width: 30,
-            color: Colors.blue,
-            // child: ExcludeSemantics(
-            //   child: Image.asset(
-            //     'thumb.png',
-            //     package: 'rally_assets',
-            //   ),
-            // ),
+          child: SizedBox(
+            width: 20,
+            child: Container(
+              decoration: borderDecoration,
+              height: 30,
+              width: 20,
+              color: Colors.blue,
+              // child: ExcludeSemantics(
+              //   child: Image.asset(
+              //     'thumb.png',
+              //     package: 'rally_assets',
+              //   ),
+              // ),
+            ),
           ),
         ),
       ),

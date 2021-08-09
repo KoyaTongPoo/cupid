@@ -34,7 +34,6 @@ class _CupidListScreenState extends State<CupidListScreen> {
                   usersDocs[index].data()['username'].toString(),
                   usersDocs[index].id,
                 )
-            // return const Text('Error');
             );
       },
     );
@@ -47,9 +46,9 @@ class CupidListTile extends StatelessWidget {
     await FirebaseFirestore.instance.collection('request').doc(user!.uid + cupidID).set(<String, dynamic>{
       'seekerName': user.displayName,
       'seekerID': user.uid,
-      'pairCupidName': cupidName,
+      'pairCupidName': cupidName, 
       'pairCupidID': cupidID,
-      // 'chatID': FirebaseFirestore.instance.collection('request').doc().id
+      'chatID': [user.uid, cupidID], 
     });
   }
 

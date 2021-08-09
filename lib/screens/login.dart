@@ -107,18 +107,13 @@ class _MainView extends StatelessWidget {
     } else {
       listViewChildren = [
         // const _SmallLogo(),
-        _UsernameInput(
-          usernameController: usernameController,
-        ),
-        const SizedBox(height: 12),
-        _PasswordInput(
-          passwordController: passwordController,
-        ),
-        _ThumbButton(
-          onTap: () {
-            _login(context);
-          },
-        ),
+        // _UsernameInput(
+        //   usernameController: usernameController,
+        // ),
+        // const SizedBox(height: 12),
+        // _PasswordInput(
+        //   passwordController: passwordController,
+        // ),
         Consumer<ApplicationState>(
           builder: (context, appState, _) => Authentication(
             email: appState.email,
@@ -130,6 +125,11 @@ class _MainView extends StatelessWidget {
             registerAccount: appState.registerAccount,
             signOut: appState.signOut,
           ),
+        ),
+        _ThumbButton(
+          onTap: () {
+            _login(context);
+          },
         ),
       ];
     }
@@ -343,18 +343,11 @@ class _ThumbButtonState extends State<_ThumbButton> {
             }
           },
           child: SizedBox(
-            width: 20,
-            child: Container(
-              decoration: borderDecoration,
-              height: 30,
-              width: 20,
-              color: Colors.blue,
-              // child: ExcludeSemantics(
-              //   child: Image.asset(
-              //     'thumb.png',
-              //     package: 'rally_assets',
-              //   ),
-              // ),
+            height: 70,
+            child: Expanded(
+              child: Image.asset(
+                'images/thumb.png',
+              ),
             ),
           ),
         ),
@@ -452,7 +445,7 @@ class _FilledButton extends StatelessWidget {
   }
 }
 
-//TODO:test firebase
+//todo:test firebase
 class ApplicationState extends ChangeNotifier {
   ApplicationState() {
     init();
@@ -529,7 +522,7 @@ class ApplicationState extends ChangeNotifier {
     try {
       var credential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email, password: password);
-      await credential.user!.updateProfile(displayName: displayName);
+      await credential.user!.updateDisplayName(displayName);
     } on FirebaseAuthException catch (e) {
       errorCallback(e);
     }

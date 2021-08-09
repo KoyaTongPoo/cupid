@@ -16,11 +16,24 @@ class HomeReal extends StatefulWidget {
 class _HomeRealState extends State<HomeReal> {
   @override
   Widget build(BuildContext context) {
+    // final seekerNameSnapshot = FirebaseFirestore.instance
+    //     .collection('request')
+    //     .where('seekerName',
+    //         isEqualTo: FirebaseAuth.instance.currentUser!.displayName)
+    //     .get();
+    // final cupidNameSnapshot = FirebaseFirestore.instance
+    //       .collection('request')
+    //       .where('pairCupidName',
+    //           isEqualTo: FirebaseAuth.instance.currentUser!.displayName)
+    //       .get();
+    // final bothSnapshots = seekerNameSnapshot  cupidNameSnapshot;
     return StreamBuilder(
       stream: FirebaseFirestore.instance
           .collection('request')
-          .where('seekerName',
-              isEqualTo: FirebaseAuth.instance.currentUser!.displayName)
+          .where(
+            'chatID',
+            arrayContains: FirebaseAuth.instance.currentUser!.uid,
+          )
           .snapshots(),
       builder:
           (ctx, AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
@@ -39,23 +52,6 @@ class _HomeRealState extends State<HomeReal> {
         );
       },
     );
-    // GridView(
-    //     gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-    //       maxCrossAxisExtent: 600,
-    //       // maxCrossAxisExtent: ,
-    //       childAspectRatio: 6,
-    //       crossAxisSpacing: 10,
-    //       mainAxisSpacing: 3,
-    //     ),
-    //     children: dummyCupidPreviews
-    //         .map(
-    //           (catData) => MatchListTile(
-    //             catData.id,
-    //             catData.name,
-    //             catData.color,
-    //           ),
-    //         )
-    //         .toList());
   }
 }
 

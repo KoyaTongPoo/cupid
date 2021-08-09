@@ -24,13 +24,14 @@ class _NewMessageState extends State<NewMessage> {
         .collection('request')
         .doc(userid + cupidID)
         .collection('chat')
-        .add(<String, dynamic>{
-      'text': _enteredMessage,
-      'createdAt': Timestamp.now(),
-      'userId': FirebaseAuth.instance.currentUser?.uid,
-      'username': FirebaseAuth.instance.currentUser?.displayName,
-      //'userImage': userData.data()['image_url']
-    });
+        .add(
+      <String, dynamic>{
+        'text': _enteredMessage,
+        'createdAt': Timestamp.now(),
+        'userId': FirebaseAuth.instance.currentUser?.uid,
+        'username': FirebaseAuth.instance.currentUser?.displayName,
+      },
+    );
     _controller.clear();
   }
 
@@ -67,3 +68,5 @@ class _NewMessageState extends State<NewMessage> {
     );
   }
 }
+
+//'userImage': userData.data()['image_url']

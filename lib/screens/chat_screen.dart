@@ -8,13 +8,14 @@ import '../widgets/chat/messages.dart';
 import '../widgets/chat/new_message.dart';
 
 class ChatScreen extends StatefulWidget {
+  static const routeName = '/chat-screen';
   @override
   _ChatScreenState createState() => _ChatScreenState();
 }
 
 class _ChatScreenState extends State<ChatScreen> {
 
-  @override
+  // @override
   // void initState() {
   //   super.initState();
   //   final fbm = FirebaseMessaging.instance;

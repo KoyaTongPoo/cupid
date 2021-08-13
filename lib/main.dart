@@ -51,7 +51,6 @@ class CupitterApp extends StatelessWidget {
   static const String profileSettingsRoute = routes.profileSettingsRoute;
   static const String profileSetRoute = routes.profileSetRoute;
   // static const String profileScreenRoute = routes.profileScreenRoute;
-  static const String chatScreenRoute = routes.chatScreenRoute;
 
   @override
   Widget build(BuildContext context) {
@@ -69,10 +68,10 @@ class CupitterApp extends StatelessWidget {
           routes: <String, WidgetBuilder>{
             homeRoute: (context) => const HomePage(),
             loginRoute: (context) => const LoginPage(),
-            profileSettingsRoute: (context) => ProfileSettingScreen(),
+            ProfileSettingScreen.routeName: (ctx) => ProfileSettingScreen(),
             // profileSetRoute: (context) => ProfileSetView(),
             // profileScreenRoute: (context) => ProfileScreen()
-            chatScreenRoute: (context) => ChatScreen()
+            ChatScreen.routeName: (ctx) => ChatScreen(),
           },
         );
       }

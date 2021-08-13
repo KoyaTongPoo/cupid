@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:cupid/data/colors.dart';
-import 'package:cupid/routes.dart' as rally_route;
+import 'package:cupid/routes.dart' as routes;
 
 import 'package:cupid/screens/profile_setting_screen.dart';
 import 'package:cupid/widgets/nestedTabBarView.dart';
@@ -15,9 +15,6 @@ import 'package:provider/provider.dart';
 import 'package:cupid/widgets/authentication.dart';
 import 'package:cupid/screens/login.dart';
 
-void SelectProfileSetting(BuildContext ctx) {
-  Navigator.of(ctx).pushNamed(rally_route.profileSettingsRoute);
-}
 
 String? seakerNameInput;
 String? introductionInput;
@@ -163,10 +160,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   SizedBox(
                     width: screenWidth,
+                    height: 20
+                  ),
+                  SizedBox(
+                    width: screenWidth,
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.of(context)
-                            .pushNamed(rally_route.profileSetRoute);
+                            .pushNamed(ProfileSettingScreen.routeName);
                       },
                       // _awaitReturnValueFromSecondScreen(context),
                       style: ButtonStyle(

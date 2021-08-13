@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 // import 'package:gallery/studies/rally/routes.dart' as rally_route;
 
 class ProfileSettingScreen extends StatefulWidget {
+  static const routeName = '/profile-setting-screen';
   @override
   _ProfileSettingScreenState createState() => _ProfileSettingScreenState();
 }

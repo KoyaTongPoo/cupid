@@ -342,12 +342,12 @@ class _ThumbButtonState extends State<_ThumbButton> {
               });
             }
           },
-          child: SizedBox(
-            height: 70,
-            child: Expanded(
-              child: Image.asset(
-                'images/thumb.png',
-              ),
+          child: Container(
+            height: 100,
+              child: ExcludeSemantics(
+                child: Image.asset(
+                  'images/thumb.png',
+                ),
             ),
           ),
         ),

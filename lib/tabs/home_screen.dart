@@ -1,9 +1,7 @@
+import 'package:cupid/screens/chat_screen.dart';
 import 'package:flutter/material.dart';
 
-// import 'package:gallery/studies/rally/screens/chat_screen.dart';
 import 'package:cupid/widgets/notification_badge.dart';
-// import 'package:gallery/studies/rally/models/dummy_data.dart';
-import 'package:cupid/routes.dart' as rally_route;
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -66,7 +64,7 @@ class MatchListTile extends StatelessWidget {
 
   void _selectMatchTile(BuildContext ctx) {
     Navigator.of(ctx).pushNamed<void>(
-      rally_route.chatScreenRoute,
+      ChatScreen.routeName,
       arguments: {
         'cupidId': cupidId,
         'name': name,

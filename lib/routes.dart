@@ -9,4 +9,4 @@ const String profileSettingsRoute = '/rally/profilesettings';
 const String profileSetRoute = '/rally/profileset';
 // const String profileScreenRoute = '/rally/profilescreen';
 // const String homeTabRoute = '/rally/homeTab'
-const String chatScreenRoute = '/rally/chatscreen';
+// const String chatScreenRoute = '/rally/chatscreen';

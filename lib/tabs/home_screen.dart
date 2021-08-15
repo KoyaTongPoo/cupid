@@ -45,8 +45,10 @@ class _HomeRealState extends State<HomeReal> {
           reverse: false,
           itemCount: usersDocs.length,
           itemBuilder: (ctx, index) => MatchListTile(
+              usersDocs[index].data()['pairCupidID'].toString(),
               usersDocs[index].data()['pairCupidName'].toString(),
-              usersDocs[index].data()['pairCupidID'].toString()),
+              usersDocs[index].data()['seekerID'].toString(),
+              usersDocs[index].data()['seekerName'].toString()),
         );
       },
     );
@@ -55,25 +57,32 @@ class _HomeRealState extends State<HomeReal> {
 
 class MatchListTile extends StatelessWidget {
   MatchListTile(
-    this.name,
-    this.cupidId,
+    this.cupidID,
+    this.cupidName,
+    this.seekerID,
+    this.seekerName,
   );
 
-  final String cupidId;
-  final String name;
+  final String cupidID;
+  final String cupidName;
+  final String seekerID;
+  final String seekerName;
 
   void _selectMatchTile(BuildContext ctx) {
     Navigator.of(ctx).pushNamed<void>(
       ChatScreen.routeName,
       arguments: {
-        'cupidId': cupidId,
-        'name': name,
+        'cupidID': cupidID,
+        'cupidName': cupidName,
+        'seekerID': seekerID,
+        'seekerName': seekerName,
       },
     );
   }
 
   @override
   Widget build(BuildContext context) {
+    final userid = FirebaseAuth.instance.currentUser!.uid;
     return ClipRRect(
       borderRadius: BorderRadius.circular(15),
       child: Container(
@@ -95,10 +104,8 @@ class MatchListTile extends StatelessWidget {
               'images/pic4.png',
             ),
           ),
-          title: Text(
-            name,
-            style: const TextStyle(fontSize: 18),
-          ),
+          title: (seekerID == userid) ?
+          Text(cupidName, style: const TextStyle(fontSize: 18)) : Text(seekerName, style: const TextStyle(fontSize: 18)),
           // subtitle: const Text(
           //     'ITで過去の依頼データを利用してあなたにピッタリなマッチを提供します。'), //現役のエンジニアでプログラミング経験豊富
           // isThreeLine: false,

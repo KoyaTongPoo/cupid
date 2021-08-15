@@ -1,20 +1,16 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:cupid/data/colors.dart';
-import 'package:cupid/routes.dart' as routes;
+import 'package:provider/provider.dart';
 
-import 'package:cupid/screens/profile_setting_screen.dart';
-import 'package:cupid/widgets/nestedTabBarView.dart';
-// import './home_screen.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:provider/provider.dart';
-// import 'package:gallery/studies/rally/tabs/forum.dart';
 
+import 'package:cupid/data/colors.dart';
+import 'package:cupid/screens/profile_setting_screen.dart';
+import 'package:cupid/widgets/nestedTabBarView.dart';
 import 'package:cupid/widgets/authentication.dart';
 import 'package:cupid/screens/login.dart';
-
 
 String? seakerNameInput;
 String? introductionInput;

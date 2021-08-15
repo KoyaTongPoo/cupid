@@ -3,26 +3,28 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class NewMessage extends StatefulWidget {
-  NewMessage(this.cupidID);
+  NewMessage(this.cupidID, this.seekerID);
 
   @override
-  _NewMessageState createState() => _NewMessageState(this.cupidID);
+  _NewMessageState createState() => _NewMessageState(this.cupidID, this.seekerID);
   final String cupidID;
+  final String seekerID;
 }
 
 class _NewMessageState extends State<NewMessage> {
-  _NewMessageState(this.cupidID);
+  _NewMessageState(this.cupidID, this.seekerID);
 
   final _controller = TextEditingController();
   var _enteredMessage = '';
   final String cupidID;
+  final String seekerID;
 
   Future<void> _sendMessage() async {
     FocusScope.of(context).unfocus();
-    final userid = FirebaseAuth.instance.currentUser!.uid;
+    // final userid = FirebaseAuth.instance.currentUser!.uid;
     await FirebaseFirestore.instance
         .collection('request')
-        .doc(userid + cupidID)
+        .doc(seekerID + cupidID)
         .collection('chat')
         .add(
       <String, dynamic>{

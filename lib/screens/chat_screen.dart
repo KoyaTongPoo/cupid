@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
 // import 'package:firebase_messaging/firebase_messaging.dart';
 
-// import 'package:gallery/studies/rally/authentication.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import '../widgets/chat/messages.dart';
 import '../widgets/chat/new_message.dart';
@@ -33,21 +32,24 @@ class _ChatScreenState extends State<ChatScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final userID = FirebaseAuth.instance.currentUser!.uid;
     final routeArgs = ModalRoute.of(context)!.settings.arguments as Map;
-    final cupidID = routeArgs['cupidId'].toString();
-    final matchName = routeArgs['name'].toString();
-    
+    final cupidID = routeArgs['cupidID'].toString();
+    final cupidName = routeArgs['cupidName'].toString();
+    final seekerID = routeArgs['seekerID'].toString();
+    final seekerName = routeArgs['seekerName'].toString();
+
     return Scaffold(
       appBar: AppBar(
-        title: Text(matchName),
+        title: (userID == seekerID) ? Text(cupidName) : Text(seekerName)
       ),
       body: Container(
         child: Column(
           children: <Widget>[
             Expanded(
-              child: Messages(cupidID),
+              child: Messages(cupidID, seekerID),
             ),
-            NewMessage(cupidID),
+            NewMessage(cupidID, seekerID),
           ],
         ),
       ),

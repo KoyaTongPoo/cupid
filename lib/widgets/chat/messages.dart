@@ -5,18 +5,19 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cupid/widgets/chat/message_bubble.dart';
 
 class Messages extends StatelessWidget {
-  Messages(this.cupidID);
+  Messages(this.cupidID, this.seekerID);
 
   final String cupidID;
+  final String seekerID;
 
   @override
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser;
-    final userid = FirebaseAuth.instance.currentUser!.uid;
+    // final userid = FirebaseAuth.instance.currentUser!.uid;
     return StreamBuilder(
       stream: FirebaseFirestore.instance
           .collection('request')
-          .doc(userid + cupidID)
+          .doc(seekerID + cupidID)
           .collection('chat')
           .orderBy('createdAt', descending: true)
           .snapshots(),

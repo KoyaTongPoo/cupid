@@ -13,7 +13,6 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
-
   // @override
   // void initState() {
   //   super.initState();
@@ -41,8 +40,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: (userID == seekerID) ? Text(cupidName) : Text(seekerName)
-      ),
+          title: (userID == seekerID) ? Text(cupidName) : Text(seekerName)),
       body: Container(
         child: Column(
           children: <Widget>[

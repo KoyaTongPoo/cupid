@@ -29,8 +29,8 @@ class HomePage extends StatelessWidget {
       children: <Widget>[
         // Image.asset('assets/codelab.png'),
         const SizedBox(height: 8),
-        const IconAndDetail(Icons.calendar_today, 'October 30'),
-        const IconAndDetail(Icons.location_city, 'San Francisco'),
+        const IconAndDetail(Icons.calendar_today, '10月30日!'),
+        const IconAndDetail(Icons.location_city, '関東周辺スタート！'),
         Consumer<ApplicationState>(
           builder: (context, appState, _) => Authentication(
             email: appState.email,
@@ -50,9 +50,9 @@ class HomePage extends StatelessWidget {
           endIndent: 8,
           color: Colors.grey,
         ),
-        const Header("What we'll be doing"),
+        const Header("今後の予定："),
         const Paragraph(
-          'Join us for a day full of Firebase Workshops and Pizza!',
+          'Cupitterのお披露目会をしたいです。参加してくれる人はYesを押してください。',
         ),
         Consumer<ApplicationState>(
           builder: (context, appState, _) => Column(

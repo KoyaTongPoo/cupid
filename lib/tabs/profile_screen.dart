@@ -33,24 +33,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return SafeArea(
       child: SingleChildScrollView(
         child: 
-        // Consumer<ApplicationState>(
-        //   builder: (context, appState, _) => 
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              // if (name == null)
-              //   Card(
-              //     child: Container(
-              //       margin: const EdgeInsets.all(4),
-              //       // width: 50,
-              //       // height: 20,
-              //       child: Text(
-              //         'シーカー名',
-              //         style: TextStyle(fontSize: 20),
-              //       ),
-              //     ),
-              //   ),
               Consumer<ApplicationState>(
                 builder: (context, appState, _) => Authentication(
                   email: appState.email,
@@ -71,8 +57,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   // width: 50,
                   // height: 20,
                   child: Text(
-                    // nameController.text,
-                    // 'takaya＠天才プログラマー',
+                    // nameController.text.toString(),
                     name!,
                     style: const TextStyle(fontSize: 20),
                   ),

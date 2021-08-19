@@ -1,3 +1,5 @@
+// import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class NestedTabBar extends StatefulWidget {
@@ -71,6 +73,31 @@ class _NestedTabBarState extends State<NestedTabBar>
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8.0),
                   color: Colors.orangeAccent.shade100,
+                ),
+                child: Column(
+                  children: [
+                    Text(
+                      'name: ',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.black,
+                      ),
+                    ),
+                    Text(
+                      'age: ',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.black,
+                      ),
+                    ),
+                    Text(
+                      'gender: ',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
                 ),
               ),
               Container(

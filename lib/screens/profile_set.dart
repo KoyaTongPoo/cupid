@@ -3,7 +3,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-// import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import 'package:cupid/widgets/authentication.dart';
@@ -11,6 +10,7 @@ import 'package:cupid/widgets/widgets.dart';
 
 class ProfileSetView extends StatelessWidget {
   ProfileSetView({Key? key}) : super(key: key);
+  static const routeName = '/profile-set-view';
 
   @override
   Widget build(BuildContext context) {
@@ -124,7 +124,6 @@ class ApplicationState extends ChangeNotifier {
   Future<void> init() async {
     await Firebase.initializeApp();
 
-    // Add from here
     FirebaseFirestore.instance
         .collection('gender')
         .where('gender', isEqualTo: true)
@@ -133,7 +132,6 @@ class ApplicationState extends ChangeNotifier {
       _genders = snapshot.docs.length;
       notifyListeners();
     });
-    // To here
 
     FirebaseAuth.instance.userChanges().listen((user) {
       if (user != null) {
